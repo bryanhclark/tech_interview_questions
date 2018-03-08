@@ -53,11 +53,6 @@ Graph.prototype._depthFirstSearch = function (vertex, visited, func) {
   if (this.edges[vertex]) {
     func(vertex);
   }
-  // for(var i = 0; i < this.edges[vertex].length; i++) {
-  //   if(!visited[this.edges[vertex][i]]) {
-  //     this._depthFirstSearch(this.edges[vertex][i], visited, func);
-  //   }
-  // }
   for (let i = 0; i < this.edges[vertex].length; i++) {
     if (!visited[this.edges[vertex][i]]) {
       this._depthFirstSearch(this.edges[vertex][i], visited, func);
@@ -94,13 +89,18 @@ Graph.prototype.pathFromTo = function (start, end) {
   let paths = [];
 
   while (queue.length) {
+    //take first node off of queue
     var vertex = queue.shift();
     for (let i = 0; i < this.edges[vertex].length; i++) {
+      //go through all of it's neighbors
       let currentNeighbor = this.edges[vertex][i]
+      //if neighbor has not been visited yet
       if (!visited[currentNeighbor]) {
         visited[currentNeighbor] = true;
+        //push current neighbor onto queue
         queue.push(currentNeighbor);
         // save paths between vertices
+        //add current neighbor to queue 
         paths[currentNeighbor] = vertex;
       }
     }
@@ -111,6 +111,7 @@ Graph.prototype.pathFromTo = function (start, end) {
 
   let path = [];
   for (var j = end; j != start; j = paths[j]) {
+    //start at the end node, re-assign j 
     path.push(j);
   }
   path.push(j);
@@ -131,10 +132,15 @@ myGraph.addVertext(3);
 myGraph.addVertext(2);
 myGraph.addVertext(1);
 myGraph.addVertext(5);
+myGraph.addVertext(6);
+myGraph.addVertext(7);
 myGraph.addEdge(4, 3);
 myGraph.addEdge(1, 3);
 myGraph.addEdge(1, 2);
 myGraph.addEdge(2, 3);
 myGraph.addEdge(4, 5);
+myGraph.addEdge(6, 5);
+myGraph.addEdge(6, 7);
 
-console.log(myGraph.pathFromTo(1, 5));
+console.log(myGraph.pathFromTo(1, 7));
+console.log('myGraph', myGraph)
