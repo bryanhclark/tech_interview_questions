@@ -3,6 +3,7 @@
 1) divides the array into two smaller sub-array, smaller and larger elements
 2) recursively soft the sub-arrays
 
+Time Complexity: O(n log(n))
 */
 
 const quickSort = arr => {
@@ -22,6 +23,6 @@ const quickSort = arr => {
   return quickSort(lesser).concat(pivot, quickSort(greater))
 }
 
-let myArray = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
+let myArray = [2, 5, 6, 4, 3, 7, 10, 8]
 
 console.log(quickSort(myArray))

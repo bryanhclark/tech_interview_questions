@@ -1,5 +1,6 @@
 //Bubble Sort
 //helper function = swap
+//Time Complexity: O(n^2)
 
 const bubbleSort = arr => {
   let hasBeenSwapped

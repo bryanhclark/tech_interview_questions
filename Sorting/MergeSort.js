@@ -1,11 +1,14 @@
 //Function merge sort
 //helper funcs: merge + split
+//Time Complexity: O(n log(n))
 
 const mergeSort = arr => {
   if (arr.length < 2) return arr
-  let a = split(arr)[0]
-  let b = split(arr)[1]
-  return merge(mergeSort(a), mergeSort(b))
+  let half = Math.ceil(arr.length / 2)
+  let first = arr.slice(0, half)
+  let second = arr.slice(half)
+
+  return merge(mergeSort(first), mergeSort(second))
 }
 
 const merge = (arr1, arr2) => {
@@ -20,9 +23,7 @@ const merge = (arr1, arr2) => {
 }
 
 const split = (arr) => {
-  let half = Math.ceil(arr.length / 2)
-  let first = arr.slice(0, half)
-  let second = arr.slice(half)
+
   return [first, second]
 }
 
