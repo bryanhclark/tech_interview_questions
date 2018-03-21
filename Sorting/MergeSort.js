@@ -7,7 +7,6 @@ const mergeSort = arr => {
   let half = Math.ceil(arr.length / 2)
   let first = arr.slice(0, half)
   let second = arr.slice(half)
-
   return merge(mergeSort(first), mergeSort(second))
 }
 
@@ -20,11 +19,6 @@ const merge = (arr1, arr2) => {
   for (; leftIndex < arr1.length; leftIndex++) merged.push(arr1[leftIndex])
   for (; rightIndex < arr2.length; rightIndex++) merged.push(arr2[rightIndex])
   return merged
-}
-
-const split = (arr) => {
-
-  return [first, second]
 }
 
 

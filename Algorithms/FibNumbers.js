@@ -12,11 +12,12 @@ console.log('without memo', fibNumbers(6)); //13
 
 const fibNumMemo = (num, memo) => {
   memo = memo || {}
-  if (memo[num]) return memo[num]
   if (num <= 1) return 1
+  else if (memo[num]) return memo[num]
+
 
   return memo[num] = fibNumMemo(num - 1, memo) + fibNumMemo(num - 2, memo)
 }
 
 
-console.log('with memmo', fibNumMemo(50))
+console.log('with memmo', fibNumMemo(6))
