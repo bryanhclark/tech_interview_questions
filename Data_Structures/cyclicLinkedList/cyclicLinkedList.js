@@ -18,7 +18,9 @@ class cyclicLinkedList {
         }
       } else {
         //if there is more than one node in the buffer
+        //if int is greater than or equal to currentNode.value
         if (int >= currentNode.value) {
+          //we iterate through while int >= currentNode and we have not reached the end
           while (int >= currentNode.value && currentNode.value < currentNode.next.value) {
             currentNode = currentNode.next
           }
@@ -61,5 +63,7 @@ myList.addNode(10)
 myList.addNode(15)
 myList.addNode(2)
 myList.addNode(1)
+myList.addNode(7)
+
 console.log(myList)
 

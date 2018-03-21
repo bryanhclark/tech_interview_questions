@@ -28,6 +28,7 @@ const insertionSort = array => {
     }
     //if arr[j] doesnt exist or arr[j] is less than our current value, we want to put temp to the right of arr[j]
     array[j + 1] = temp;
+
   }
   return array;
 }
