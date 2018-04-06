@@ -1,19 +1,3 @@
-// const balancedBrackets = str => {
-//   let queue = []
-//   let matchingPairs = { '{': '}', '[': ']', '(': ')' }
-//   let open = '{(['
-//   let close = '}])'
-//   for (let bracket of str) {
-//     if (open.includes(bracket)) queue.unshift(bracket)
-//     else if (close.includes(bracket)) {
-//       if (!queue.length) return false
-//       if (matchingPairs[queue[0]] === bracket) queue.shift()
-//       else return false
-//     }
-//   }
-//   return queue.length === 0
-// }
-
 const balancedBrackets = str => {
   let queue = []
   let matchingPairs = { '{': '}', '[': ']', '(': ')' }
