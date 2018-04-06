@@ -53,7 +53,7 @@ class Trie {
   }
 
   _removeNode(node, word) {
-    if (!node | !word) return
+    if (!node || !word) return
     node.prefixes--
     let letter = word[0]
     let child = node.children[letter]
