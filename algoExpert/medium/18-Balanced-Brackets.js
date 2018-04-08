@@ -14,4 +14,7 @@ const balancedBrackets = str => {
 
 let myBrackets = '{([])}/'
 
+
+
+
 console.log(balancedBrackets(myBrackets))
